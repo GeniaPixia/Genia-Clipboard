@@ -4,8 +4,8 @@ All screenshots are **real, unedited Windows application captures**, not rendere
 
 There are two different versions here:
 
-- **English 0.5.7:** screenshots of the [published bilingual version](https://github.com/geniasoftwin/Genia-Clipboard/releases/tag/v0.5.7).
-- **Russian 0.5.6:** preserved screenshots from the [previous release](https://github.com/geniasoftwin/Genia-Clipboard/releases/tag/v0.5.6).
+- **English 0.5.7:** screenshots of the [published bilingual version](https://github.com/GeniaPixia/Genia-Clipboard/releases/tag/v0.5.7).
+- **Russian 0.5.6:** preserved screenshots from the [previous release](https://github.com/GeniaPixia/Genia-Clipboard/releases/tag/v0.5.6).
 
 ## English v0.5.7 — English interface
 
@@ -87,7 +87,7 @@ These screenshots were captured during preparation of the previous v0.5.6 releas
 
 ## Русский
 
-Здесь представлены **две настоящие версии интерфейса**: русская 0.5.6 и английская 0.5.7. Версия [0.5.7 официально опубликована](https://github.com/geniasoftwin/Genia-Clipboard/releases/tag/v0.5.7) и поддерживает оба языка.
+Здесь представлены **две настоящие версии интерфейса**: русская 0.5.6 и английская 0.5.7. Версия [0.5.7 официально опубликована](https://github.com/GeniaPixia/Genia-Clipboard/releases/tag/v0.5.7) и поддерживает оба языка.
 
 | Скриншот английского интерфейса 0.5.7 | Описание |
 |---|---|
@@ -103,4 +103,4 @@ These screenshots were captured during preparation of the previous v0.5.6 releas
 
 ---
 
-[English README](../README.md) · [README на русском](../README_RU.md) · [Issues / Ошибки](https://github.com/geniasoftwin/Genia-Clipboard/issues/new/choose)
+[English README](../README.md) · [README на русском](../README_RU.md) · [Issues / Ошибки](https://github.com/GeniaPixia/Genia-Clipboard/issues/new/choose)
