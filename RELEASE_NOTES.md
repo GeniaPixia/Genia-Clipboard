@@ -24,7 +24,7 @@ GeniaClipboard is a free, MIT-licensed, portable **text-only** clipboard history
 
 Windows CI restored and built the application. The project owner manually verified the five beta checks: Russian UI in Auto mode, persistent manual English selection after restart, About links/version, Portable Vault history/unlock, and paste into Notepad. This does not establish universal compatibility with every application or scaling configuration.
 
-View [authentic English beta screenshots](https://github.com/geniasoftwin/Genia-Clipboard/blob/main/docs/SCREENSHOTS.md) and report reproducible issues via [GitHub Issues](https://github.com/geniasoftwin/Genia-Clipboard/issues/new/choose). Never post real passwords, private clipboard history or vault files.
+View [authentic English beta screenshots](https://github.com/GeniaPixia/Genia-Clipboard/blob/main/docs/SCREENSHOTS.md) and report reproducible issues via [GitHub Issues](https://github.com/GeniaPixia/Genia-Clipboard/issues/new/choose). Never post real passwords, private clipboard history or vault files.
 
 **Updating:** Exit GeniaClipboard from the tray, back up the complete `Data` directory, then replace the EXE. Keep your Portable Vault master password.
 
@@ -52,6 +52,6 @@ GeniaClipboard — бесплатный портативный менеджер 
 
 Windows CI прошёл успешно. Автор вручную проверил пять сценариев: русский Auto, сохранение выбора English после перезапуска, версию и ссылки About, Portable Vault и историю, вставку в Блокнот. Это не гарантия идентичной работы во всех приложениях и масштабах экрана.
 
-[Настоящие скриншоты](https://github.com/geniasoftwin/Genia-Clipboard/blob/main/docs/SCREENSHOTS.md) · [Сообщить об ошибке](https://github.com/geniasoftwin/Genia-Clipboard/issues/new/choose). Не публикуйте реальные пароли, записи истории или файлы Vault.
+[Настоящие скриншоты](https://github.com/GeniaPixia/Genia-Clipboard/blob/main/docs/SCREENSHOTS.md) · [Сообщить об ошибке](https://github.com/GeniaPixia/Genia-Clipboard/issues/new/choose). Не публикуйте реальные пароли, записи истории или файлы Vault.
 
 **Обновление:** закройте приложение через трей, сохраните резервную копию всей папки `Data`, затем замените EXE. Не теряйте мастер-пароль Portable Vault.

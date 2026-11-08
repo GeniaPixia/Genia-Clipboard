@@ -9,7 +9,7 @@
     <AssemblyName>GeniaClipboard</AssemblyName>
     <RootNamespace>GeniaClipboard</RootNamespace>
     <Version>0.5.8-rc.1</Version>
-    <Authors>GeniaSoftWin</Authors>
+    <Authors>GeniaPixia</Authors>
     <Description>Privacy-first portable clipboard manager for Windows.</Description>
     <ApplicationIcon>Assets\GeniaClipboard.ico</ApplicationIcon>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
