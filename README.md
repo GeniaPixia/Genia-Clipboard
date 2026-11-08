@@ -12,19 +12,19 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/geniasoftwin/Genia-Clipboard/actions/workflows/build.yml"><img alt="Windows CI" src="https://github.com/geniasoftwin/Genia-Clipboard/actions/workflows/build.yml/badge.svg"></a>
+  <a href="https://github.com/GeniaPixia/Genia-Clipboard/actions/workflows/build.yml"><img alt="Windows CI" src="https://github.com/GeniaPixia/Genia-Clipboard/actions/workflows/build.yml/badge.svg"></a>
   <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-green">
   <img alt="Windows x64" src="https://img.shields.io/badge/Windows-10%2F11%20x64-0078D6">
   <img alt="Version" src="https://img.shields.io/badge/version-0.5.7-2563EB">
 </p>
 
 <p align="center">
-  <a href="https://github.com/geniasoftwin/Genia-Clipboard/releases"><strong>Download for Windows</strong></a> ·
+  <a href="https://github.com/GeniaPixia/Genia-Clipboard/releases"><strong>Download for Windows</strong></a> ·
   <a href="docs/PUBLIC_BETA_GUIDE.md">Getting started</a> ·
-  <a href="https://github.com/geniasoftwin/Genia-Clipboard/issues/new/choose">Report a bug / Suggest a feature</a>
+  <a href="https://github.com/GeniaPixia/Genia-Clipboard/issues/new/choose">Report a bug / Suggest a feature</a>
 </p>
 
-> **Now available: v0.5.7** with Russian and English UI (automatic Windows language detection or manual choice under Settings → System). Existing encrypted history and the v0.5.6 guarded Paste workflow are preserved. [Download v0.5.7](https://github.com/geniasoftwin/Genia-Clipboard/releases/tag/v0.5.7).
+> **Now available: v0.5.7** with Russian and English UI (automatic Windows language detection or manual choice under Settings → System). Existing encrypted history and the v0.5.6 guarded Paste workflow are preserved. [Download v0.5.7](https://github.com/GeniaPixia/Genia-Clipboard/releases/tag/v0.5.7).
 
 ## Why another clipboard manager?
 
@@ -36,7 +36,7 @@ Windows Win+V, Ditto and CopyQ already exist. GeniaClipboard doesn't try to matc
 
 ## How to use
 
-1. Download the [latest public release ZIP](https://github.com/geniasoftwin/Genia-Clipboard/releases) and unpack it into a writable folder.
+1. Download the [latest public release ZIP](https://github.com/GeniaPixia/Genia-Clipboard/releases) and unpack it into a writable folder.
 2. Start `GeniaClipboard.exe`. Choose Windows Vault (DPAPI) or Portable Vault (master password).
 3. Copy text in any app. Open GeniaClipboard with `Ctrl+Shift+V` (or your configured shortcut) or via the tray.
 4. Select a history entry. **Copy** puts it on the system clipboard; **Paste** attempts to restore a recently focused external window and send `Ctrl+V`.
@@ -114,8 +114,8 @@ Release assets include a portable ZIP, the standalone `GeniaClipboard.exe`, and 
 
 ## Participate
 
-This is a small independent project seeking practical feedback, **especially on focus and paste behavior**. [Open an issue](https://github.com/geniasoftwin/Genia-Clipboard/issues/new/choose) with your Windows version, GeniaClipboard version, steps to reproduce and expected vs actual behavior. Please use **fictional test text**, never secrets or private clipboard records.
+This is a small independent project seeking practical feedback, **especially on focus and paste behavior**. [Open an issue](https://github.com/GeniaPixia/Genia-Clipboard/issues/new/choose) with your Windows version, GeniaClipboard version, steps to reproduce and expected vs actual behavior. Please use **fictional test text**, never secrets or private clipboard records.
 
 See [Contributing](CONTRIBUTING.md), [Changelog](CHANGELOG.md), [Public Beta Guide](docs/PUBLIC_BETA_GUIDE.md) and [Roadmap](ROADMAP.md).
 
-**License:** [MIT](LICENSE) · © 2026 GeniaSoftWin
+**License:** [MIT](LICENSE) · © 2026 GeniaPixia
