@@ -15,7 +15,7 @@
   <a href="https://github.com/GeniaPixia/Genia-Clipboard/actions/workflows/build.yml"><img alt="Windows CI" src="https://github.com/GeniaPixia/Genia-Clipboard/actions/workflows/build.yml/badge.svg"></a>
   <img alt="MIT License" src="https://img.shields.io/badge/license-MIT-green">
   <img alt="Windows x64" src="https://img.shields.io/badge/Windows-10%2F11%20x64-0078D6">
-  <img alt="Beta" src="https://img.shields.io/badge/version-0.5.7-2563EB">
+  <img alt="Beta" src="https://img.shields.io/badge/version-0.5.8-2563EB">
 </p>
 
 <p align="center">
@@ -24,7 +24,7 @@
   <a href="https://github.com/GeniaPixia/Genia-Clipboard/issues/new/choose">Сообщить об ошибке / Предложить функцию</a>
 </p>
 
-> **Выпущена GeniaClipboard v0.5.7** — русский и английский интерфейс с автоматическим определением языка Windows либо ручным выбором в «Настройки → Система». Зашифрованная история и защищённая вставка из 0.5.6 сохранены. [Скачать 0.5.7](https://github.com/GeniaPixia/Genia-Clipboard/releases/tag/v0.5.7).
+> **Выпущена GeniaClipboard v0.5.8** — исправлено появление главного окна при обычном запуске и восстановление при повторном запуске. Автозапуск Windows может работать без открытия окна через `--tray`. Русский/английский интерфейс и зашифрованная история сохранены. [Скачать 0.5.8](https://github.com/GeniaPixia/Genia-Clipboard/releases/tag/v0.5.8).
 
 ## Зачем ещё один менеджер буфера обмена?
 
