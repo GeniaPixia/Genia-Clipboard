@@ -39,17 +39,17 @@ internal sealed class AboutForm : Form
                 ? "Privacy-first portable clipboard history for Windows"
                 : "Портативная история буфера обмена с заботой о конфиденциальности",
             9.5F, false, Color.FromArgb(75, 85, 99), 38);
-        AddLine(content, "Windows 10/11 x64 · MIT License · © 2026 GeniaSoftWin", 9, false,
+        AddLine(content, "Windows 10/11 x64 · MIT License · © 2026 GeniaPixia", 9, false,
             Color.FromArgb(65, 75, 90), 30);
         AddLine(content, UiText.T("Ссылки и обратная связь"), 10, true,
             Color.FromArgb(30, 41, 59), 32);
 
         AddLink(content, UiText.T("Исходный код на GitHub"),
-            "https://github.com/geniasoftwin/Genia-Clipboard");
+            "https://github.com/GeniaPixia/Genia-Clipboard");
         AddLink(content, UiText.T("Сообщить об ошибке"),
-            "https://github.com/geniasoftwin/Genia-Clipboard/issues/new/choose");
+            "https://github.com/GeniaPixia/Genia-Clipboard/issues/new/choose");
         AddLink(content, "MIT License",
-            "https://github.com/geniasoftwin/Genia-Clipboard/blob/main/LICENSE");
+            "https://github.com/GeniaPixia/Genia-Clipboard/blob/main/LICENSE");
 
         AddLine(content,
             UiText.T("История текста шифруется локально. TXT-экспорт и журналы не шифруются. Программа не защищает от вредоносного ПО, работающего в вашей сессии Windows."),
