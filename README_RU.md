@@ -12,19 +12,19 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/geniasoftwin/Genia-Clipboard/actions/workflows/build.yml"><img alt="Windows CI" src="https://github.com/geniasoftwin/Genia-Clipboard/actions/workflows/build.yml/badge.svg"></a>
+  <a href="https://github.com/GeniaPixia/Genia-Clipboard/actions/workflows/build.yml"><img alt="Windows CI" src="https://github.com/GeniaPixia/Genia-Clipboard/actions/workflows/build.yml/badge.svg"></a>
   <img alt="MIT License" src="https://img.shields.io/badge/license-MIT-green">
   <img alt="Windows x64" src="https://img.shields.io/badge/Windows-10%2F11%20x64-0078D6">
   <img alt="Beta" src="https://img.shields.io/badge/version-0.5.7-2563EB">
 </p>
 
 <p align="center">
-  <a href="https://github.com/geniasoftwin/Genia-Clipboard/releases"><strong>Скачать для Windows</strong></a> ·
+  <a href="https://github.com/GeniaPixia/Genia-Clipboard/releases"><strong>Скачать для Windows</strong></a> ·
   <a href="docs/PUBLIC_BETA_GUIDE.md">Инструкция</a> ·
-  <a href="https://github.com/geniasoftwin/Genia-Clipboard/issues/new/choose">Сообщить об ошибке / Предложить функцию</a>
+  <a href="https://github.com/GeniaPixia/Genia-Clipboard/issues/new/choose">Сообщить об ошибке / Предложить функцию</a>
 </p>
 
-> **Выпущена GeniaClipboard v0.5.7** — русский и английский интерфейс с автоматическим определением языка Windows либо ручным выбором в «Настройки → Система». Зашифрованная история и защищённая вставка из 0.5.6 сохранены. [Скачать 0.5.7](https://github.com/geniasoftwin/Genia-Clipboard/releases/tag/v0.5.7).
+> **Выпущена GeniaClipboard v0.5.7** — русский и английский интерфейс с автоматическим определением языка Windows либо ручным выбором в «Настройки → Система». Зашифрованная история и защищённая вставка из 0.5.6 сохранены. [Скачать 0.5.7](https://github.com/GeniaPixia/Genia-Clipboard/releases/tag/v0.5.7).
 
 ## Зачем ещё один менеджер буфера обмена?
 
@@ -36,7 +36,7 @@
 
 ## Как пользоваться
 
-1. Скачайте [ZIP последнего публичного релиза](https://github.com/geniasoftwin/Genia-Clipboard/releases) и распакуйте в доступную для записи папку.
+1. Скачайте [ZIP последнего публичного релиза](https://github.com/GeniaPixia/Genia-Clipboard/releases) и распакуйте в доступную для записи папку.
 2. Запустите `GeniaClipboard.exe`. Выберите Windows Vault (DPAPI) или Portable Vault (с мастер-паролем).
 3. Копируйте текст из разных приложений. Откройте историю `Ctrl+Shift+V` (или настроенным хоткеем) либо через трей.
 4. **Явно выделите запись.** «Копировать» помещает её в системный буфер; «Вставить» пытается вернуть фокус в недавно активное внешнее окно и отправить `Ctrl+V`.
@@ -110,8 +110,8 @@ dotnet publish GeniaClipboard.csproj -c Release
 
 ## Обратная связь и участие
 
-Это небольшой независимый проект, которому важны практические отзывы, особенно о **переключении окон и вставке**. [Создайте GitHub Issue](https://github.com/geniasoftwin/Genia-Clipboard/issues/new/choose) с версией Windows, версией программы, шагами, ожидаемым и фактическим поведением. Используйте **только вымышленные тестовые строки**, без настоящих секретов.
+Это небольшой независимый проект, которому важны практические отзывы, особенно о **переключении окон и вставке**. [Создайте GitHub Issue](https://github.com/GeniaPixia/Genia-Clipboard/issues/new/choose) с версией Windows, версией программы, шагами, ожидаемым и фактическим поведением. Используйте **только вымышленные тестовые строки**, без настоящих секретов.
 
 См. [Участие в разработке](CONTRIBUTING_RU.md), [История изменений](CHANGELOG.md), [Инструкция beta-тестера](docs/PUBLIC_BETA_GUIDE.md) и [План развития](ROADMAP.md).
 
-**Лицензия:** [MIT](LICENSE) · © 2026 GeniaSoftWin
+**Лицензия:** [MIT](LICENSE) · © 2026 GeniaPixia
