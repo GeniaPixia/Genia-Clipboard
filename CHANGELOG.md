@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.5.8] - 2026-11-08
+
+### Fixed
+
+- Show the main window on ordinary manual EXE launch, instead of silently starting with the window hidden.
+- Bring the already-running window to the foreground on a second launch, using a per-user/session activation event while retaining the single-instance mutex.
+- Keep silent tray launch explicit through `--tray`, including for Windows autostart.
+- Show the main window before opening Settings, About, Private Session or Clear History from the tray, improving dialog visibility.
+
+### Identity
+
+- Keep the updated GeniaPixia author attribution and GitHub links.
+- Display the running application product version in About instead of a hard-coded version.
+
+### Validation and compatibility
+
+- Windows x64 build passed for the tested release candidate; user confirmed normal window launch, minimize/restore through tray, Ctrl+Shift+V, and second-EXE activation on Windows.
+- User-provided screenshots show the Settings and About dialogs open and display the correct RC version/author.
+- `--tray`, the full tray-dialog path, and clean-exit scenarios were not separately signed off in the RC test report.
+- No changes to encrypted Vault format, history migration, master passwords or the Data directory. Keep v0.5.7 available as rollback.
+
 All notable GeniaClipboard changes are documented in this file.
 
 ## [0.5.7] - 2026-10-21
