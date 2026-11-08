@@ -28,4 +28,18 @@ This checklist is for the **test branch only**, not the released v0.5.7 binary.
 
 The pull request's Windows build checks .NET 8 restore and self-contained x64 publish. **GitHub Actions cannot establish interactive tray/foreground behavior**; the S1–S8 acceptance steps require a real Windows desktop.
 
-Do not merge to `main`, retag a release or overwrite production files until desktop acceptance passes.
+## Owner's RC1 evidence and remaining coverage
+
+On 2026-11-08, the owner confirmed on an isolated Windows build:
+
+- S1 **PASS** — normal launch displays the main window.
+- S2 **PASS** — X hides the window to the tray.
+- S3 **PARTIAL PASS** — tray restore works; Esc and right-click Open were not separately reported.
+- S4 **PASS** — the global hotkey restores the window.
+- S5 **PASS** — second EXE launch activates the existing instance.
+- S7 **PARTIAL PASS** — screenshots show About and Settings visible with the main window underneath, but do not establish that the dialogs were opened from hidden tray state.
+- S6 and S8 — **NOT SEPARATELY REPORTED** in the owner's observations.
+
+The owner subsequently indicated that the application is behaving correctly and requested to proceed. This is a release go-ahead, **not a claim that every S1–S8 test was performed**. The outstanding steps remain explicitly documented in v0.5.8 release notes for follow-up.
+
+**Release handling:** do not change the published v0.5.7 tag or binary. Never modify, delete or migrate production Vault and Data as part of this startup fix.
