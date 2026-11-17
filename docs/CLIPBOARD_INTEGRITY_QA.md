@@ -6,7 +6,7 @@ This document covers the **isolated test build only**. Version 0.5.8 remains the
 
 Check that data **written by GeniaClipboard's own Copy/Paste actions** is still exactly what GeniaClipboard intended:
 
-- Immediately after writing the clipboard, compare Unicode text byte-for-byte at the .NET string level (ordinal comparison) and verify that the clipboard sequence number has not changed.
+- Immediately after writing the clipboard, compare Unicode text exactly using ordinal .NET string comparison and verify that the clipboard sequence number has not changed.
 - Immediately before GeniaClipboard sends Ctrl+V, repeat both checks. Also verify contents before giving the manual paste fallback.
 - An unreadable, missing or unexpectedly rewritten clipboard causes a **warning** and suppresses GeniaClipboard's automatic Ctrl+V.
 - Do not change or restore the clipboard automatically. Do not store copied text or fingerprints separately. No background watcher, OCR, keyboard hook, online check, security alert log, changes to Vault or Data schema.
