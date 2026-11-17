@@ -17,7 +17,7 @@ internal sealed partial class MainForm
             return;
         }
 
-        if (await TrySetClipboardTextAsync(text))
+        if (await TrySetClipboardTextAsync(text) is not null)
         {
             _statusLabel.Text = selected.Count == 1
                 ? UiText.T("Скопировано")
@@ -52,8 +52,13 @@ internal sealed partial class MainForm
             return;
         }
 
-        if (!TryBuildSelectedText(out var text) ||
-            !await TrySetClipboardTextAsync(text))
+        if (!TryBuildSelectedText(out var text))
+        {
+            return;
+        }
+
+        var clipboardSequence = await TrySetClipboardTextAsync(text);
+        if (clipboardSequence is null)
         {
             return;
         }
@@ -62,7 +67,7 @@ internal sealed partial class MainForm
         // exact window and process before switching focus and sending Ctrl+V.
         if (!_foregroundTracker.IsSameWindow(targetWindow, targetProcessId))
         {
-            ShowPasteFallback();
+            ShowPasteFallback(text, clipboardSequence.Value);
             return;
         }
 
@@ -72,7 +77,7 @@ internal sealed partial class MainForm
         if (!_foregroundTracker.IsSameWindow(targetWindow, targetProcessId) ||
             NativeMethods.GetForegroundWindow() != targetWindow)
         {
-            ShowPasteFallback();
+            ShowPasteFallback(text, clipboardSequence.Value);
             return;
         }
 
@@ -82,12 +87,28 @@ internal sealed partial class MainForm
         if (_foregroundTracker.IsSameWindow(targetWindow, targetProcessId) &&
             NativeMethods.GetForegroundWindow() == targetWindow)
         {
+            // Last possible read-only check before Ctrl+V. A foreign write
+            // during the focus/hide delays must prevent automated pasting.
+            if (!ClipboardIntegrityGuard.MatchesClipboard(text, clipboardSequence.Value))
+            {
+                ShowClipboardIntegrityWarning();
+                return;
+            }
+
             NativeMethods.SendCtrlV();
         }
     }
 
-    private void ShowPasteFallback()
+    private void ShowPasteFallback(string text, uint clipboardSequence)
     {
+        // A manual fallback must never claim the clipboard still holds the
+        // intended entry after another process has changed it.
+        if (!ClipboardIntegrityGuard.MatchesClipboard(text, clipboardSequence))
+        {
+            ShowClipboardIntegrityWarning();
+            return;
+        }
+
         MessageBox.Show(
             this,
             UiText.IsEnglish
@@ -100,7 +121,24 @@ internal sealed partial class MainForm
             MessageBoxIcon.Information);
     }
 
-    private async Task<bool> TrySetClipboardTextAsync(string text)
+    private void ShowClipboardIntegrityWarning()
+    {
+        if (!Visible)
+        {
+            ShowWindow();
+        }
+
+        MessageBox.Show(
+            this,
+            UiText.IsEnglish
+                ? "Clipboard integrity check failed: the copied text could not be verified or was changed by another process.\n\nGeniaClipboard did not send Ctrl+V. Check the destination and copy again before pasting."
+                : "Проверка буфера обмена не пройдена: скопированный текст не удалось проверить или он был изменён другой программой.\n\nGeniaClipboard не выполняла Ctrl+V. Проверьте получателя и скопируйте текст заново перед вставкой.",
+            UiText.IsEnglish ? "GeniaClipboard — Clipboard verification" : "GeniaClipboard — Проверка буфера",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Warning);
+    }
+
+    private async Task<uint?> TrySetClipboardTextAsync(string text)
     {
         for (var attempt = 0; attempt < 5; attempt++)
         {
@@ -118,9 +156,19 @@ internal sealed partial class MainForm
                 data.SetData("CanUploadToCloudClipboard", false, cloudStream);
 
                 Clipboard.SetDataObject(data, copy: true);
-                _lastClipboardSequenceNumber = NativeMethods.GetClipboardSequenceNumber();
-                ScheduleClipboardClear(_lastClipboardSequenceNumber);
-                return true;
+                var sequence = NativeMethods.GetClipboardSequenceNumber();
+
+                // Read back exactly what Windows now exposes. Mismatch or a
+                // clipboard write by a different process is fail-closed.
+                if (!ClipboardIntegrityGuard.MatchesClipboard(text, sequence))
+                {
+                    ShowClipboardIntegrityWarning();
+                    return null;
+                }
+
+                _lastClipboardSequenceNumber = sequence;
+                ScheduleClipboardClear(sequence);
+                return sequence;
             }
             catch (ExternalException)
             {
@@ -133,7 +181,7 @@ internal sealed partial class MainForm
             "GeniaClipboard",
             MessageBoxButtons.OK,
             MessageBoxIcon.Information);
-        return false;
+        return null;
     }
 
     private void EditSelectedEntry()
