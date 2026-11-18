@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.5.9-rc.1] - 2026-11-17 (testing only; not a stable release)
+
+### Added
+
+- Lightweight read-only clipboard integrity verification for GeniaClipboard-initiated **Copy** and **Paste** actions.
+- After copying, read back the exact Unicode text and compare the Windows clipboard sequence number.
+- Before automated Ctrl+V, repeat the content/sequence verification after the existing focus and tray transition.
+- If verification fails or another process changes the clipboard, show a RU/EN warning and **do not automatically paste**.
+- Check clipboard validity when offering manual paste fallback; never silently claim corrupted clipboard content is safe.
+
+### Compatibility and privacy
+
+- No new background clipboard watcher, global keyboard hook, OCR, online call or dependency.
+- No logging or persistent storage of integrity-check data. Existing encrypted Vault, Portable Vault passwords, clipboard history format and migration behavior are unchanged.
+- Ordinary external-app Ctrl+C/Ctrl+V is outside the scope of this safeguard. Checking before Ctrl+V does not prove what ultimately appears in the target; the post-check race remains possible.
+- Windows desktop verification is required before promoting this test version.
+
 ## [0.5.8] - 2026-11-08
 
 ### Fixed
