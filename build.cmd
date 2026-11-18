@@ -4,6 +4,7 @@ rem GeniaClipboard 0.5.9 RC1 - isolated portable Windows build.
 rem Run from the extracted full SOURCE ZIP. Does NOT execute the built EXE.
 rem Does not change any existing GeniaClipboard Vault, Data or install.
 rem Restore uses the official NuGet v3 feed for missing .NET 8 targeting packs.
+rem Keep this .cmd in Windows CRLF format; Github source ZIP keeps raw bytes.
 
 cd /d "%~dp0"
 if errorlevel 1 goto :bad_directory
@@ -20,8 +21,14 @@ echo Mode: isolated / no EXE execution
 echo.
 
 if not exist "%PROJECT%" goto :missing_project
+findstr /L /C:"<Version>0.5.9-rc.1</Version>" "%PROJECT%" >nul
+if errorlevel 1 goto :bad_version
 where dotnet >nul 2>nul
-if errorlevel 1 goto :missing_dotnet
+if errorlevel 1 goto :bad_version
+echo ERROR: Expected GeniaClipboard 0.5.9-rc.1 source project.
+goto :failed
+
+:missing_dotnet
 
 rem Avoid overwriting any previous test build, including its local Data/Vault.
 if exist "%OUT%\" goto :existing_output
