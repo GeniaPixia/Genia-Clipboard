@@ -23,7 +23,7 @@ Check that data **written by GeniaClipboard's own Copy/Paste actions** is still 
 
 1. Exit 0.5.8 through its system-tray menu. Do **not** copy, move, replace, rename or remove existing production `Data` or Portable Vault files.
 2. Clone the RC1 source branch or download the full source archive into a **new empty directory**. Verify the pinned commit used for the test.
-3. Run `dotnet publish GeniaClipboard.csproj -c Release -o TEST_PUBLISH` in that isolated directory.
+3. Double-click `build.cmd` in the extracted source directory, or run it from a normal `cmd.exe` window. It restores from the official NuGet.org feed and publishes to a new `TEST_PUBLISH` directory. It refuses to overwrite an existing `TEST_PUBLISH` folder. Do not run the older pinned PowerShell source-build script against this newer source commit.
 4. Verify Windows Defender reports active protection and no new detection for this EXE. Never disable SmartScreen/Defender.
 5. Start only the isolated `TEST_PUBLISH/GeniaClipboard.exe`. Choose a new test Vault and use **synthetic clipboard strings only**.
 
