@@ -1,0 +1,2 @@
+# Preserve literal CRLF bytes in build.cmd (GitHub source ZIP and git clones).
+build.cmd -text
