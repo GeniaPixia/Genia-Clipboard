@@ -24,11 +24,7 @@ if not exist "%PROJECT%" goto :missing_project
 findstr /L /C:"<Version>0.5.9-rc.1</Version>" "%PROJECT%" >nul
 if errorlevel 1 goto :bad_version
 where dotnet >nul 2>nul
-if errorlevel 1 goto :bad_version
-echo ERROR: Expected GeniaClipboard 0.5.9-rc.1 source project.
-goto :failed
-
-:missing_dotnet
+if errorlevel 1 goto :missing_dotnet
 
 rem Avoid overwriting any previous test build, including its local Data/Vault.
 if exist "%OUT%\" goto :existing_output
@@ -65,6 +61,10 @@ goto :finish
 
 :missing_project
 echo ERROR: GeniaClipboard.csproj is missing. Extract the entire source ZIP.
+goto :failed
+
+:bad_version
+echo ERROR: Expected GeniaClipboard 0.5.9-rc.1 source project.
 goto :failed
 
 :missing_dotnet
